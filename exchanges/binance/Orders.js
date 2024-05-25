@@ -10,3 +10,4 @@ const client = new Spot(apiKey, apiSecret)
 client.allOrders('SOLUSDT')
   .then(response => client.logger.log(response.data))
   .catch(error => client.logger.error(error))
+ 
