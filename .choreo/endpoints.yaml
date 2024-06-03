@@ -1,0 +1,53 @@
+endpoints:
+  - path: /api/bybit/account
+    method: GET
+    response:
+      status: 200
+  - path: /api/mexc/account
+    method: GET
+    response:
+      status: 200
+  - path: /api/binance/account
+    method: GET
+    response:
+      status: 200
+  - path: /api/kucoin/account
+    method: GET
+    response:
+      status: 200
+  - path: /api/gate/account
+    method: GET
+    response:
+      status: 200
+  - path: /api/binance/openOrders
+    method: GET
+    response:
+      status: 200
+  - path: /api/mexc/open-order
+    method: GET
+    response:
+      status: 200
+  - path: /api/mexc/price
+    method: GET
+    response:
+      status: 200
+  - path: /api/mexc/trade-history
+    method: GET
+    response:
+      status: 200
+  - path: /api/kucoin/price
+    method: GET
+    response:
+      status: 200
+  - path: /api/kucoin/orders
+    method: GET
+    response:
+      status: 200
+  - path: /api/kucoin/access-token
+    method: GET
+    response:
+      status: 200
+  - path: /api/gate/price
+    method: GET
+    response:
+      status: 200
