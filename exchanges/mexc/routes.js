@@ -147,6 +147,21 @@ router.get("/position-history-futures", async (req, res) => {
   }
 });
 
+router.get("/position-open-futures", async (req, res) => {
+  try {
+    const openPositionModule = require("../../test/Futures/PositionOpenFutures.js");
+
+    if (typeof openPositionModule.getOpenPositions === "function") {
+      const result = await openPositionModule.getOpenPositions();
+      res.json(result);
+    } else {
+      res.status(500).json({ error: "Invalid module structure" });
+    }
+  } catch (error) {
+    console.error("Error importing PositionHistoryFutures.js:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
 
 // Add more routes as needed
 
