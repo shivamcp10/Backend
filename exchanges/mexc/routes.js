@@ -114,7 +114,7 @@ router.get("/trade-history", async (req, res) => {
 router.get("/assets-detail-futures", async (req, res) => {
   try {
     const assetsDetailModule = await import(
-      "../../test/Futures/AssetsDetailFutures.js"
+      "../mexc/Futures/AssetsDetailFutures.js"
     );
 
     if (typeof assetsDetailModule.getAssetsDetails === "function") {
@@ -135,7 +135,7 @@ router.get("/assets-detail-futures", async (req, res) => {
 
 router.get("/position-history-futures", async (req, res) => {
   try {
-    const positionHistoryModule = require("../../test/Futures/PositionHistoryFutures.js");
+    const positionHistoryModule = require("../mexc/Futures/PositionHistoryFutures.js");
 
     if (typeof positionHistoryModule.getPositionHistory === "function") {
       const result = await positionHistoryModule.getPositionHistory();
@@ -151,7 +151,7 @@ router.get("/position-history-futures", async (req, res) => {
 
 router.get("/position-open-futures", async (req, res) => {
   try {
-    const openPositionModule = require("../../test/Futures/PositionOpenFutures.js");
+    const openPositionModule = require("../mexc/Futures/PositionOpenFutures.js");
 
     if (typeof openPositionModule.getOpenPositions === "function") {
       const result = await openPositionModule.getOpenPositions();
@@ -167,7 +167,7 @@ router.get("/position-open-futures", async (req, res) => {
 
 router.get("/transfers-futures", async (req, res) => {
   try {
-    const transfersModule = require("../../test/Futures/Transfers.js");
+    const transfersModule = require("../mexc/Futures/Transfers.js");
 
     if (typeof transfersModule.getTransferHistory === "function") {
       const result = await transfersModule.getTransferHistory();
