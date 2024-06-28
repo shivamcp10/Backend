@@ -113,7 +113,9 @@ router.get("/trade-history", async (req, res) => {
 
 router.get("/assets-detail-futures", async (req, res) => {
   try {
-    const assetsDetailModule = await import("../../test/Futures/AssetsDetailFutures.js");
+    const assetsDetailModule = await import(
+      "../../test/Futures/AssetsDetailFutures.js"
+    );
 
     if (typeof assetsDetailModule.getAssetsDetails === "function") {
       try {
@@ -163,6 +165,21 @@ router.get("/position-open-futures", async (req, res) => {
   }
 });
 
+router.get("/transfers-futures", async (req, res) => {
+  try {
+    const transfersModule = require("../../test/Futures/Transfers.js");
+
+    if (typeof transfersModule.getTransferHistory === "function") {
+      const result = await transfersModule.getTransferHistory();
+      res.json(result);
+    } else {
+      res.status(500).json({ error: "Invalid module structure" });
+    }
+  } catch (error) {
+    console.error("Error importing PositionHistoryFutures.js:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
 // Add more routes as needed
 
 module.exports = router;
